@@ -116,6 +116,7 @@ input, select {
 }
 
 /* ここから */
+/* 共通 */
 .clearfix::before,
 .clearfix::after {
   content: "";
@@ -123,31 +124,29 @@ input, select {
   clear: both;
 }
 
-body {
+.fadein-img {
   position: relative;
 }
 
-body::after {
+.fadein-img::before,
+.fadein-img::after {
   content: "";
   display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
   top: 0;
   left: 0;
+}
+
+.fadein-img::after {
   z-index: 9999;
   background-color: black;
   animation: fadeotu 3s linear 0s 1;
   animation-fill-mode: forwards;
 }
 
-body::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+.fadein-img::before {
   z-index: 10000;
   background-image: url("./lib/imgs/movies.png");
   background-size: contain;
@@ -157,25 +156,40 @@ body::before {
 
 @keyframes fadeinotu {
   0% {
+    z-index: 10000;
     opacity: 0;
   }
   50% {
+    z-index: 10000;
     opacity: 1;
   }
   80% {
+    z-index: 10000;
     opacity: 1;
   }
+  99.9% {
+    z-index: 10000;
+  }
   100% {
+    z-index: -1;
     opacity: 0;
   }
 }
 
 @keyframes fadeotu {
-  80% {
+  0% {
+    z-index: 9999;
     opacity: 1;
   }
-
+  80% {
+    z-index: 9999;
+    opacity: 1;
+  }
+  99.9% {
+    z-index: 9999;
+  }
   100% {
+    z-index: -1;
     opacity: 0;
   }
 }
@@ -184,6 +198,33 @@ body::before {
   padding: 10px 20px;
 }
 
+/* 星マーク */
+.star {
+  width: fit-content;
+}
+
+.stars {
+  position: relative;
+  display: block;
+}
+
+.stars:before {
+  content: '★★★★★';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #ffcc33;
+}
+
+.stars:after {
+  content: '★★★★★';
+  display: block;
+  color: #ccc;
+}
+/* end 星マーク */
+/* end 共通 */
 /* header */
 header {
   width: 100%;
@@ -325,7 +366,6 @@ header .content-block .head-menu > .menu-trigger.active span:nth-of-type(3) {
 .new-arrival-list ul li a .about .star {
   position: absolute;
   bottom: 5px;
-  color: #ffed00;
   font-size: 5vw;
 }
 
