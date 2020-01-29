@@ -236,7 +236,6 @@ header .content-block .head-logo > img {
 }
 
 header .content-block .head-menu {
-  display: inline-block;
   float: right;
 }
 
@@ -244,7 +243,7 @@ header .content-block .head-nav {
   background-color: #545454;
 }
 
-header .content-block .head-nav.open {
+header .content-block .head-nav.close {
   display: none;
 }
 
@@ -257,10 +256,6 @@ header .content-block .head-nav > .menu-content li {
 header .content-block .head-nav > .menu-content li a {
   width: 100%;
   text-align: center;
-}
-
-header .content-block .head-nav .fadein {
-  display: block;
 }
 
 /* メニューボタン */
@@ -324,7 +319,44 @@ header .content-block .head-menu > .menu-trigger.active span:nth-of-type(3) {
   font-family: 'Marck Script', cursive;
 }
 
-/* 一覧 */
+/* おすすめ一覧 */
+.Recommend-list ul {
+  font-size: 0;
+}
+
+.Recommend-list ul li {
+  display: inline-block;
+  font-size: 4vw;
+  width: 50%;
+  border: solid 1px #fff;
+}
+
+.Recommend-list ul li a {
+  position: relative;
+}
+
+.Recommend-list ul li a,
+.Recommend-list ul li a img {
+  width: 100%;
+}
+
+.Recommend-list ul li a .title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  word-wrap: break-word;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+/* end おすすめ一覧 */
+/* 新着一覧 */
 
 .new-arrival-list ul li {
   background-color: #fff;
@@ -379,48 +411,29 @@ header .content-block .head-menu > .menu-trigger.active span:nth-of-type(3) {
   margin: 0;
 }
 
-.new-arrival-list .more-btn {
+.more-btn {
   margin: 8px 0 0 0;
   display: block;
   text-align: right;
 }
 /* end 新着一覧 */
-
-/* おすすめ一覧 */
-.Recommend-list ul {
+/* ジャンル */
+.genre-list ul {
   font-size: 0;
 }
 
-.Recommend-list ul li {
+.genre-list ul li {
   display: inline-block;
+  margin: 5px 10px 5px 0;
+}
+
+.genre-list ul li button {
+  padding: 5px;
+
+  line-height: 100%;
   font-size: 4vw;
-  width: 50%;
-  border: solid 1px #fff;
+  color: #000;
 }
 
-.Recommend-list ul li a {
-  position: relative;
-}
-
-.Recommend-list ul li a ,
-.Recommend-list ul li a img {
-  width: 100%;
-}
-
-.Recommend-list ul li a .title {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  table-layout: fixed;
-  word-wrap: break-word;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-/* end おすすめ一覧 */
-
+/* end ジャンル */
 /* end home */
